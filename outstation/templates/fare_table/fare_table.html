@@ -1,0 +1,35 @@
+{% load static %}
+{% block content %}
+<div class="background-gray fare-table">
+  <table class="table">
+    <tbody>
+      {% for fare in fares_table|slice:"5" %}
+        {% include 'fare_table/fare_row.html' with fare=fare %}
+      {% endfor %}
+    </tbody>
+  </table>
+  {% if fares_table|length > 5 %}
+    <div id="showMoreBtn" class="show-more-less">View all options</div>
+    <table id="extraFares" class="table hide">
+      <tbody>
+        {% for fare in fares_table|slice:"5:" %}
+          {% include 'fare_table/fare_row.html' with fare=fare %}
+        {% endfor %}
+      </tbody>
+    </table>
+  {% endif %}
+  <div id="showLessBtn" class="show-more-less hide">Show less</div>
+</div>
+<script type="text/javascript">
+  $('#showMoreBtn').on('click', function(e){
+    $('#extraFares').removeClass('hide');
+    $('#showMoreBtn').addClass('hide');
+    $('#showLessBtn').removeClass('hide');
+  });
+  $('#showLessBtn').on('click', function(e){
+    $('#extraFares').addClass('hide');
+    $('#showMoreBtn').removeClass('hide');
+    $('#showLessBtn').addClass('hide');
+  });
+</script>
+{% endblock %}
