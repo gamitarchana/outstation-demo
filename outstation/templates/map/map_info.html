@@ -10,7 +10,7 @@
   <div class="map-info-container">
     <div class="tooltip">
       <div class="map-label-small upper">{{location.place.name}}</div>
-      <span class="tooltiptext {% if isRightAlign %}right{% endif %}" >{{location.place.name}}</span>
+      <span class="tooltiptext {% if isRightAlign %}right{% endif %}" style="bottom:20px">{{location.place.name}}</span>
     </div>
     {% if location.detour_distance > 0 %}
     <div class="tooltip">
