@@ -1,3 +1,10 @@
 Django>=2.2,<2.3
-wagtail>=2.5,<2.6
+wagtail=2.4
 social-auth-app-django
+django-favicon
+wagtail-metadata
+wagtail-robots
+wagtail-schema.org
+wagalytics
+django-antispam
+django-qartez
