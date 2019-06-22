@@ -1,5 +1,4 @@
-Django>=2.2,<2.3
-wagtail=2.4
+wagtail==2.4
 social-auth-app-django
 django-favicon
 wagtail-metadata
